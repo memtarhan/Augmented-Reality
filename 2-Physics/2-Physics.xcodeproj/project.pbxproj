@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB041954229455780026EAAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB041953229455780026EAAD /* AppDelegate.swift */; };
+		DB041956229455780026EAAD /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DB041955229455780026EAAD /* art.scnassets */; };
+		DB041958229455780026EAAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB041957229455780026EAAD /* ViewController.swift */; };
+		DB04195B229455780026EAAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB041959229455780026EAAD /* Main.storyboard */; };
+		DB04195D229455790026EAAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB04195C229455790026EAAD /* Assets.xcassets */; };
+		DB041960229455790026EAAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB04195E229455790026EAAD /* LaunchScreen.storyboard */; };
+		DB04196B229455790026EAAD /* __PhysicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB04196A229455790026EAAD /* __PhysicsTests.swift */; };
+		DB041976229455790026EAAD /* __PhysicsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB041975229455790026EAAD /* __PhysicsUITests.swift */; };
+		DBECAA3F2294579C008DCF1C /* DebugHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBECAA3E2294579C008DCF1C /* DebugHelper.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB041967229455790026EAAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB041948229455780026EAAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB04194F229455780026EAAD;
+			remoteInfo = "2-Physics";
+		};
+		DB041972229455790026EAAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB041948229455780026EAAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB04194F229455780026EAAD;
+			remoteInfo = "2-Physics";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB041950229455780026EAAD /* 2-Physics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-Physics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB041953229455780026EAAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DB041955229455780026EAAD /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		DB041957229455780026EAAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB04195A229455780026EAAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB04195C229455790026EAAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB04195F229455790026EAAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DB041961229455790026EAAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB041966229455790026EAAD /* 2-PhysicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "2-PhysicsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB04196A229455790026EAAD /* __PhysicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __PhysicsTests.swift; sourceTree = "<group>"; };
+		DB04196C229455790026EAAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB041971229455790026EAAD /* 2-PhysicsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "2-PhysicsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB041975229455790026EAAD /* __PhysicsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __PhysicsUITests.swift; sourceTree = "<group>"; };
+		DB041977229455790026EAAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBECAA3E2294579C008DCF1C /* DebugHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugHelper.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB04194D229455780026EAAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB041963229455790026EAAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB04196E229455790026EAAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB041947229455780026EAAD = {
+			isa = PBXGroup;
+			children = (
+				DB041952229455780026EAAD /* 2-Physics */,
+				DB041969229455790026EAAD /* 2-PhysicsTests */,
+				DB041974229455790026EAAD /* 2-PhysicsUITests */,
+				DB041951229455780026EAAD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB041951229455780026EAAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB041950229455780026EAAD /* 2-Physics.app */,
+				DB041966229455790026EAAD /* 2-PhysicsTests.xctest */,
+				DB041971229455790026EAAD /* 2-PhysicsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB041952229455780026EAAD /* 2-Physics */ = {
+			isa = PBXGroup;
+			children = (
+				DBECAA3D22945791008DCF1C /* Helper */,
+				DB041984229456740026EAAD /* Views */,
+				DB0419832294566A0026EAAD /* Controllers */,
+				DB041953229455780026EAAD /* AppDelegate.swift */,
+				DB041955229455780026EAAD /* art.scnassets */,
+				DB04195C229455790026EAAD /* Assets.xcassets */,
+				DB041961229455790026EAAD /* Info.plist */,
+			);
+			path = "2-Physics";
+			sourceTree = "<group>";
+		};
+		DB041969229455790026EAAD /* 2-PhysicsTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB04196A229455790026EAAD /* __PhysicsTests.swift */,
+				DB04196C229455790026EAAD /* Info.plist */,
+			);
+			path = "2-PhysicsTests";
+			sourceTree = "<group>";
+		};
+		DB041974229455790026EAAD /* 2-PhysicsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DB041975229455790026EAAD /* __PhysicsUITests.swift */,
+				DB041977229455790026EAAD /* Info.plist */,
+			);
+			path = "2-PhysicsUITests";
+			sourceTree = "<group>";
+		};
+		DB0419832294566A0026EAAD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB041957229455780026EAAD /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DB041984229456740026EAAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB041959229455780026EAAD /* Main.storyboard */,
+				DB04195E229455790026EAAD /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DBECAA3D22945791008DCF1C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				DBECAA3E2294579C008DCF1C /* DebugHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB04194F229455780026EAAD /* 2-Physics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB04197A229455790026EAAD /* Build configuration list for PBXNativeTarget "2-Physics" */;
+			buildPhases = (
+				DB04194C229455780026EAAD /* Sources */,
+				DB04194D229455780026EAAD /* Frameworks */,
+				DB04194E229455780026EAAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "2-Physics";
+			productName = "2-Physics";
+			productReference = DB041950229455780026EAAD /* 2-Physics.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB041965229455790026EAAD /* 2-PhysicsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB04197D229455790026EAAD /* Build configuration list for PBXNativeTarget "2-PhysicsTests" */;
+			buildPhases = (
+				DB041962229455790026EAAD /* Sources */,
+				DB041963229455790026EAAD /* Frameworks */,
+				DB041964229455790026EAAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB041968229455790026EAAD /* PBXTargetDependency */,
+			);
+			name = "2-PhysicsTests";
+			productName = "2-PhysicsTests";
+			productReference = DB041966229455790026EAAD /* 2-PhysicsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DB041970229455790026EAAD /* 2-PhysicsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB041980229455790026EAAD /* Build configuration list for PBXNativeTarget "2-PhysicsUITests" */;
+			buildPhases = (
+				DB04196D229455790026EAAD /* Sources */,
+				DB04196E229455790026EAAD /* Frameworks */,
+				DB04196F229455790026EAAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB041973229455790026EAAD /* PBXTargetDependency */,
+			);
+			name = "2-PhysicsUITests";
+			productName = "2-PhysicsUITests";
+			productReference = DB041971229455790026EAAD /* 2-PhysicsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB041948229455780026EAAD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Mehmet Tarhan";
+				TargetAttributes = {
+					DB04194F229455780026EAAD = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					DB041965229455790026EAAD = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = DB04194F229455780026EAAD;
+					};
+					DB041970229455790026EAAD = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = DB04194F229455780026EAAD;
+					};
+				};
+			};
+			buildConfigurationList = DB04194B229455780026EAAD /* Build configuration list for PBXProject "2-Physics" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB041947229455780026EAAD;
+			productRefGroup = DB041951229455780026EAAD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB04194F229455780026EAAD /* 2-Physics */,
+				DB041965229455790026EAAD /* 2-PhysicsTests */,
+				DB041970229455790026EAAD /* 2-PhysicsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB04194E229455780026EAAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB041956229455780026EAAD /* art.scnassets in Resources */,
+				DB041960229455790026EAAD /* LaunchScreen.storyboard in Resources */,
+				DB04195D229455790026EAAD /* Assets.xcassets in Resources */,
+				DB04195B229455780026EAAD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB041964229455790026EAAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB04196F229455790026EAAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB04194C229455780026EAAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB041958229455780026EAAD /* ViewController.swift in Sources */,
+				DB041954229455780026EAAD /* AppDelegate.swift in Sources */,
+				DBECAA3F2294579C008DCF1C /* DebugHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB041962229455790026EAAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB04196B229455790026EAAD /* __PhysicsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB04196D229455790026EAAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB041976229455790026EAAD /* __PhysicsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB041968229455790026EAAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB04194F229455780026EAAD /* 2-Physics */;
+			targetProxy = DB041967229455790026EAAD /* PBXContainerItemProxy */;
+		};
+		DB041973229455790026EAAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB04194F229455780026EAAD /* 2-Physics */;
+			targetProxy = DB041972229455790026EAAD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB041959229455780026EAAD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB04195A229455780026EAAD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB04195E229455790026EAAD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB04195F229455790026EAAD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB041978229455790026EAAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DB041979229455790026EAAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB04197B229455790026EAAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 357K2F49RE;
+				INFOPLIST_FILE = "2-Physics/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.arfy.Physics;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB04197C229455790026EAAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 357K2F49RE;
+				INFOPLIST_FILE = "2-Physics/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.arfy.Physics;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DB04197E229455790026EAAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V93JPRM6T8;
+				INFOPLIST_FILE = "2-PhysicsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.arfy.--PhysicsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2-Physics.app/2-Physics";
+			};
+			name = Debug;
+		};
+		DB04197F229455790026EAAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V93JPRM6T8;
+				INFOPLIST_FILE = "2-PhysicsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.arfy.--PhysicsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2-Physics.app/2-Physics";
+			};
+			name = Release;
+		};
+		DB041981229455790026EAAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V93JPRM6T8;
+				INFOPLIST_FILE = "2-PhysicsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.arfy.--PhysicsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "2-Physics";
+			};
+			name = Debug;
+		};
+		DB041982229455790026EAAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V93JPRM6T8;
+				INFOPLIST_FILE = "2-PhysicsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.arfy.--PhysicsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "2-Physics";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB04194B229455780026EAAD /* Build configuration list for PBXProject "2-Physics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB041978229455790026EAAD /* Debug */,
+				DB041979229455790026EAAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB04197A229455790026EAAD /* Build configuration list for PBXNativeTarget "2-Physics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB04197B229455790026EAAD /* Debug */,
+				DB04197C229455790026EAAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB04197D229455790026EAAD /* Build configuration list for PBXNativeTarget "2-PhysicsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB04197E229455790026EAAD /* Debug */,
+				DB04197F229455790026EAAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB041980229455790026EAAD /* Build configuration list for PBXNativeTarget "2-PhysicsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB041981229455790026EAAD /* Debug */,
+				DB041982229455790026EAAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB041948229455780026EAAD /* Project object */;
+}

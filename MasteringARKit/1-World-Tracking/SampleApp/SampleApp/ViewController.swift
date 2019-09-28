@@ -13,6 +13,12 @@ import ARKit
 class ViewController: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var xPositionSlider: UISlider!
+    @IBOutlet weak var xPositionLabel: UILabel!
+    @IBOutlet weak var yPositionSlider: UISlider!
+    @IBOutlet weak var yPositionLabel: UILabel!
+    @IBOutlet weak var zPositionSlider: UISlider!
+    @IBOutlet weak var zPositionLabel: UILabel!
     
     private var configuration: ARWorldTrackingConfiguration!
     
@@ -43,9 +49,6 @@ class ViewController: UIViewController {
 
         // Run the view's session
         sceneView.session.run(configuration)
-        
-        let worldOriginCoordinates = SCNVector3(0, 0, 0)
-        displayShape(at: worldOriginCoordinates)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -59,10 +62,38 @@ class ViewController: UIViewController {
         resetWorldOrigin()
     }
     
+    @IBAction func addButtonDidTap(_ sender: Any) {
+        let position = SCNVector3(xPositionSlider.value, yPositionSlider.value, zPositionSlider.value)
+        displayShape(at: position)
+    }
+    
+    @IBAction func slideDidChange(_ sender: UISlider) {
+        switch sender.tag {
+        case 0:
+            // X position
+            xPositionLabel.text = "\(sender.value)"
+        case 1:
+            // Y position
+            yPositionLabel.text = "\(sender.value)"
+        case 2:
+            // Z position
+            zPositionLabel.text = "\(sender.value)"
+        default:
+            break
+        }
+    }
+    
     // MARK: - Resetting the World Origin
     private func resetWorldOrigin() {
         print(#function)
+
         sceneView.session.pause()
+        // Remove nodes named "sphere"
+        sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
+            if node.name == "sphere" {
+                node.removeFromParentNode()
+            }
+        }
         sceneView.session.run(configuration, options: [.resetTracking])
     }
     
@@ -76,6 +107,8 @@ class ViewController: UIViewController {
         let node = SCNNode(geometry: sphere)
         // Set location of the node
         node.position = coordinates
+        // Set name of the node
+        node.name = "sphere"
         
         // Add the node to sceneView
         sceneView.scene.rootNode.addChildNode(node)

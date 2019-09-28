@@ -24,3 +24,37 @@ private func resetWorldOrigin() {
 }
 ```
 
+
+
+### Displaying Shapes at Coordinates
+
+- Creating a 3D shape (Sphere, box etc.)
+- Modifing the looks (Changing diffuse etc.)
+- Creating a node with the shape 
+- Setting position of the node 
+- Adding the node to scene view 
+
+```swift
+override func viewWillAppear(_ animated: Bool) {
+     super.viewWillAppear(animated)
+        
+     let worldOriginCoordinates = SCNVector3(0, 0, 0)
+     displayShape(at: worldOriginCoordinates)
+}
+
+// MARK: - Displaying Shapes at Coordinates
+private func displayShape(at coordinates: SCNVector3) {
+      // Create a 3D shape(Sphere)
+      let sphere = SCNSphere(radius: 0.06)
+      // Set the looks of the shape
+      sphere.firstMaterial?.diffuse.contents = UIColor.purple
+      // Create a node with the shape
+      let node = SCNNode(geometry: sphere)
+      // Set location of the node
+      node.position = coordinates
+        
+      // Add the node to sceneView
+      sceneView.scene.rootNode.addChildNode(node)
+}
+```
+

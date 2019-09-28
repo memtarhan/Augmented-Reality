@@ -43,6 +43,9 @@ class ViewController: UIViewController {
 
         // Run the view's session
         sceneView.session.run(configuration)
+        
+        let worldOriginCoordinates = SCNVector3(0, 0, 0)
+        displayShape(at: worldOriginCoordinates)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -61,6 +64,21 @@ class ViewController: UIViewController {
         print(#function)
         sceneView.session.pause()
         sceneView.session.run(configuration, options: [.resetTracking])
+    }
+    
+    // MARK: - Displaying Shapes at Coordinates
+    private func displayShape(at coordinates: SCNVector3) {
+        // Create a 3D shape(Sphere)
+        let sphere = SCNSphere(radius: 0.06)
+        // Set the looks of the shape
+        sphere.firstMaterial?.diffuse.contents = UIColor.purple
+        // Create a node with the shape
+        let node = SCNNode(geometry: sphere)
+        // Set location of the node
+        node.position = coordinates
+        
+        // Add the node to sceneView
+        sceneView.scene.rootNode.addChildNode(node)
     }
 }
 

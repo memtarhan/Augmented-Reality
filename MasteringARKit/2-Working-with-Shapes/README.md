@@ -52,7 +52,7 @@ private func resetWorldOrigin() {
 
 
 ```swift
- private func createNode(with type: ShapeType) -> SCNNode {
+ private func createShape(with type: ShapeType) -> SCNNode {
         // Create geometry w/ given type
         var geometry: SCNGeometry!
         switch type {
@@ -71,5 +71,33 @@ private func resetWorldOrigin() {
         
         return node
     }
+```
+
+
+
+### Displaying Text 
+
+> Besides displaying geometric shapes, you can display texts in ARKit with defining a string along with text's font, size and color. 
+
+```swift
+let text = SCNText(string: "ARKit is Awesome", extrusionDepth: 1)
+```
+
+> The extrusion depth defines thickness of the letters. It is in meters. 
+
+```swift
+private func createText(with string: String) -> SCNNode {
+        let text = SCNText(string: string, extrusionDepth: 1)
+        
+        let material = SCNMaterial()
+        material.diffuse.contents = UIColor.purple
+        text.materials = [material]
+        
+        let node = SCNNode()
+        node.geometry = text
+        node.scale = SCNVector3(0.01, 0.01, 0.01)
+        
+        return node
+}
 ```
 

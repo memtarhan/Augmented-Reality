@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     
     @IBAction func addButtonDidTap(_ sender: Any) {
         let position = SCNVector3(xPositionSlider.value, yPositionSlider.value, zPositionSlider.value)
-        let node = createNode(with: .box)
+        let node = createText(with: "ARKit is Awesome")
         display(node: node, at: position)
     }
     
@@ -92,15 +92,15 @@ class ViewController: UIViewController {
         sceneView.session.pause()
         // Remove nodes named "sphere"
         sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
-            if node.name == "shape" {
+            if node.name == "displayed" {
                 node.removeFromParentNode()
             }
         }
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
     
-    // MARK: - Creating a Node
-    private func createNode(with type: ShapeType) -> SCNNode {
+    // MARK: - Creating a Shape
+    private func createShape(with type: ShapeType) -> SCNNode {
         // Create geometry w/ given type
         var geometry: SCNGeometry!
         switch type {
@@ -120,12 +120,27 @@ class ViewController: UIViewController {
         return node
     }
     
+    // MARK: - Creating a Text
+    private func createText(with string: String) -> SCNNode {
+        let text = SCNText(string: string, extrusionDepth: 1)
+        
+        let material = SCNMaterial()
+        material.diffuse.contents = UIColor.purple
+        text.materials = [material]
+        
+        let node = SCNNode()
+        node.geometry = text
+        node.scale = SCNVector3(0.01, 0.01, 0.01)
+        
+        return node
+    }
+    
     // MARK: - Displaying a Node at Coordinates
     private func display(node: SCNNode, at coordinates: SCNVector3) {
         // Set location of the node
         node.position = coordinates
         // Set name of the node
-        node.name = "shape"
+        node.name = "displayed"
         // Add the node to sceneView
         sceneView.scene.rootNode.addChildNode(node)
     }

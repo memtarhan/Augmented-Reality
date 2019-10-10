@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     
     @IBAction func addButtonDidTap(_ sender: Any) {
         let position = SCNVector3(xPositionSlider.value, yPositionSlider.value, zPositionSlider.value)
-        let node = createText(with: "ARKit is Awesome")
+        let node = createShape(with: .pyramid)
         display(node: node, at: position)
     }
     
@@ -106,11 +106,15 @@ class ViewController: UIViewController {
         switch type {
         case .box:
             geometry = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0)
+            // Set looks of the box
+            geometry.firstMaterial?.diffuse.contents = UIColor.purple
+        case .pyramid:
+            geometry = SCNPyramid(width: 0.2, height: 0.5, length: 0.3)
+            // Set looks of the box
+            geometry.firstMaterial?.diffuse.contents = UIImage(named: "pyramid")
         default:
             geometry = SCNSphere(radius: 0.3)
         }
-        // Set looks of the box
-        geometry.firstMaterial?.diffuse.contents = UIColor.purple
         
         // Create a node w/ that box
         let node = SCNNode(geometry: geometry)

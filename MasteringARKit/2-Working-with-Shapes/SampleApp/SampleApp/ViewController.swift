@@ -65,7 +65,8 @@ class ViewController: UIViewController {
     
     @IBAction func addButtonDidTap(_ sender: Any) {
         let position = SCNVector3(xPositionSlider.value, yPositionSlider.value, zPositionSlider.value)
-        displayShape(at: position)
+        let node = createNode(with: .box)
+        display(node: node, at: position)
     }
     
     @IBAction func slideDidChange(_ sender: UISlider) {
@@ -91,26 +92,40 @@ class ViewController: UIViewController {
         sceneView.session.pause()
         // Remove nodes named "sphere"
         sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
-            if node.name == "sphere" {
+            if node.name == "shape" {
                 node.removeFromParentNode()
             }
         }
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
     
-    // MARK: - Displaying Shapes at Coordinates
-    private func displayShape(at coordinates: SCNVector3) {
-        // Create a 3D shape(Sphere)
-        let sphere = SCNSphere(radius: 0.06)
-        // Set the looks of the shape
-        sphere.firstMaterial?.diffuse.contents = UIColor.purple
-        // Create a node with the shape
-        let node = SCNNode(geometry: sphere)
+    // MARK: - Creating a Node
+    private func createNode(with type: ShapeType) -> SCNNode {
+        // Create geometry w/ given type
+        var geometry: SCNGeometry!
+        switch type {
+        case .box:
+            geometry = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0)
+        default:
+            geometry = SCNSphere(radius: 0.3)
+        }
+        // Set looks of the box
+        geometry.firstMaterial?.diffuse.contents = UIColor.purple
+        
+        // Create a node w/ that box
+        let node = SCNNode(geometry: geometry)
+        // Set name of the node
+        node.name = type.name
+        
+        return node
+    }
+    
+    // MARK: - Displaying a Node at Coordinates
+    private func display(node: SCNNode, at coordinates: SCNVector3) {
         // Set location of the node
         node.position = coordinates
         // Set name of the node
-        node.name = "sphere"
-        
+        node.name = "shape"
         // Add the node to sceneView
         sceneView.scene.rootNode.addChildNode(node)
     }

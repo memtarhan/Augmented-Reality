@@ -33,3 +33,43 @@ private func resetWorldOrigin() {
 }
 ```
 
+
+
+### Displaying Different Geometric Shapes 
+
+#### Geometric Shapes 
+
+> * SCNFloor
+> * SCNBox
+> * SCNCapsule
+> * SCNCone
+> * SCNCylinder
+> * SCNPlane
+> * SCNPyramid
+> * SCNTorus
+> * SCNTube
+
+
+
+```swift
+ private func createNode(with type: ShapeType) -> SCNNode {
+        // Create geometry w/ given type
+        var geometry: SCNGeometry!
+        switch type {
+        case .box:
+            geometry = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0)
+        default:
+            geometry = SCNSphere(radius: 0.3)
+        }
+        // Set looks of the box
+        geometry.firstMaterial?.diffuse.contents = UIColor.purple
+        
+        // Create a node w/ that box
+        let node = SCNNode(geometry: geometry)
+        // Set name of the node
+        node.name = type.name
+        
+        return node
+    }
+```
+

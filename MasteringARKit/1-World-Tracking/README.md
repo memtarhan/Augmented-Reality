@@ -28,11 +28,12 @@ private func resetWorldOrigin() {
 
 ### Displaying Shapes at Coordinates
 
-- Creating a 3D shape (Sphere, box etc.)
-- Modifing the looks (Changing diffuse etc.)
-- Creating a node with the shape 
-- Setting position of the node 
-- Adding the node to scene view 
+> - Creating a 3D shape (Sphere, box etc.)
+> - Modifing the looks (Changing diffuse etc.)
+> - Creating a node with the shape 
+> - Setting position of the node 
+> - Adding the node to scene view 
+>
 
 ```swift
 override func viewWillAppear(_ animated: Bool) {

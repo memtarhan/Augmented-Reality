@@ -101,3 +101,28 @@ private func createText(with string: String) -> SCNNode {
 }
 ```
 
+
+
+### Drawing Shapes
+
+```swift
+private func drawShape() -> SCNNode {
+        let plane = UIBezierPath()
+        
+        // Define starting point
+        plane.move(to: CGPoint(x: 0, y: 0))
+        
+        // Draw lines
+        plane.addLine(to: CGPoint(x: 0.1, y: 0.1))
+        plane.addLine(to: CGPoint(x: 0.1, y: -0.03))
+        
+        // Create shape
+        let shape = SCNShape(path: plane, extrusionDepth: 0.1)
+        
+        let node = SCNNode(geometry: shape)
+        node.geometry?.firstMaterial?.diffuse.contents = UIColor.purple
+        
+        return node
+ }
+```
+

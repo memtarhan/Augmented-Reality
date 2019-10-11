@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     
     @IBAction func addButtonDidTap(_ sender: Any) {
         let position = SCNVector3(xPositionSlider.value, yPositionSlider.value, zPositionSlider.value)
-        let node = createShape(with: .pyramid)
+        let node = drawShape()
         display(node: node, at: position)
     }
     
@@ -135,6 +135,26 @@ class ViewController: UIViewController {
         let node = SCNNode()
         node.geometry = text
         node.scale = SCNVector3(0.01, 0.01, 0.01)
+        
+        return node
+    }
+    
+    // MARK: Drawing a shape
+    private func drawShape() -> SCNNode {
+        let plane = UIBezierPath()
+        
+        // Define starting point
+        plane.move(to: CGPoint(x: 0, y: 0))
+        
+        // Draw lines
+        plane.addLine(to: CGPoint(x: 0.1, y: 0.1))
+        plane.addLine(to: CGPoint(x: 0.1, y: -0.03))
+        
+        // Create shape
+        let shape = SCNShape(path: plane, extrusionDepth: 0.1)
+        
+        let node = SCNNode(geometry: shape)
+        node.geometry?.firstMaterial?.diffuse.contents = UIColor.purple
         
         return node
     }

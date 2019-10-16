@@ -35,6 +35,9 @@
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6.5" minValue="0.0" maxValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="Yxf-qp-8EB">
                                                 <rect key="frame" x="126" y="0.0" width="250" height="31"/>
+                                                <connections>
+                                                    <action selector="temperatureChanged:" destination="BV1-FR-VrT" eventType="valueChanged" id="lwD-mg-IYp"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -52,6 +55,9 @@
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lix-mQ-0VO">
                                                 <rect key="frame" x="126" y="0.0" width="250" height="31"/>
+                                                <connections>
+                                                    <action selector="intensityChanged:" destination="BV1-FR-VrT" eventType="valueChanged" id="eSM-JY-Zd7"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -67,22 +73,37 @@
                                             <constraint firstAttribute="height" constant="45" id="5vJ-n5-GYG"/>
                                             <constraint firstAttribute="width" constant="45" id="OlT-hI-TcL"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="colorChanged:" destination="BV1-FR-VrT" eventType="touchUpInside" id="oZg-4z-PBT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pev-aB-mdn" customClass="CircleButton" customModule="SampleApp" customModuleProvider="target">
                                         <rect key="frame" x="72" y="0.0" width="45" height="45"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="colorChanged:" destination="BV1-FR-VrT" eventType="touchUpInside" id="gxS-JJ-gS5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSI-85-7Ta" customClass="CircleButton" customModule="SampleApp" customModuleProvider="target">
                                         <rect key="frame" x="144" y="0.0" width="45" height="45"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="colorChanged:" destination="BV1-FR-VrT" eventType="touchUpInside" id="M9K-th-iNG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4h-qi-Yxq" customClass="CircleButton" customModule="SampleApp" customModuleProvider="target">
                                         <rect key="frame" x="216" y="0.0" width="45" height="45"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="colorChanged:" destination="BV1-FR-VrT" eventType="touchUpInside" id="W28-96-nRy"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7z-Lk-NtN" customClass="CircleButton" customModule="SampleApp" customModuleProvider="target">
                                         <rect key="frame" x="288" y="0.0" width="45" height="45"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="colorChanged:" destination="BV1-FR-VrT" eventType="touchUpInside" id="at7-7O-fbl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

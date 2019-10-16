@@ -15,6 +15,7 @@
 		DB2B57822357984D002FFC44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB2B57802357984D002FFC44 /* LaunchScreen.storyboard */; };
 		DB2B578D2357984D002FFC44 /* SampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B578C2357984D002FFC44 /* SampleAppTests.swift */; };
 		DB2B57982357984D002FFC44 /* SampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B57972357984D002FFC44 /* SampleAppUITests.swift */; };
+		DB2B57A623579AD7002FFC44 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B57A523579AD7002FFC44 /* CircleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		DB2B57932357984D002FFC44 /* SampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB2B57972357984D002FFC44 /* SampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppUITests.swift; sourceTree = "<group>"; };
 		DB2B57992357984D002FFC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB2B57A523579AD7002FFC44 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				DB2B577E2357984D002FFC44 /* Assets.xcassets */,
 				DB2B57802357984D002FFC44 /* LaunchScreen.storyboard */,
 				DB2B57832357984D002FFC44 /* Info.plist */,
+				DB2B57A523579AD7002FFC44 /* CircleButton.swift */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2B57A623579AD7002FFC44 /* CircleButton.swift in Sources */,
 				DB2B577A23579848002FFC44 /* ViewController.swift in Sources */,
 				DB2B577623579848002FFC44 /* AppDelegate.swift in Sources */,
 			);

@@ -24,10 +24,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene()
         
         // Set the scene to the view
         sceneView.scene = scene
+        
+        registerTapGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +49,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
 
+    // MARK: - UITapGestureRecognizer
+    private func registerTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
+        sceneView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func didTap(_ sender: UIGestureRecognizer) {
+        print(#function)
+    }
+    
     // MARK: - ARSCNViewDelegate
     
 /*

@@ -14,6 +14,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var drawSwitch: UISwitch!
+    @IBOutlet weak var clearButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,7 +96,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                         n.removeFromParentNode()
                     }
                 }
+                
                 self.sceneView.scene.rootNode.addChildNode(node)
+                
+                if self.clearButton.isHighlighted {
+                    self.sceneView.scene.rootNode.enumerateChildNodes { (n, _) in
+                        n.removeFromParentNode()
+                    }
+                }
             }
         }
     }

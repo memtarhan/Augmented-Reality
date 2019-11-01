@@ -21,9 +21,15 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HMg-SD-0hx">
                                 <rect key="frame" x="182.5" y="811" width="51" height="31"/>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5O-M0-ONI">
+                                <rect key="frame" x="197" y="769" width="20" height="22"/>
+                                <state key="normal" image="clear.fill" catalog="system"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="HMg-SD-0hx" firstAttribute="top" secondItem="z5O-M0-ONI" secondAttribute="bottom" constant="20" id="15b-rx-l2H"/>
+                            <constraint firstItem="z5O-M0-ONI" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="EFf-md-7D9"/>
                             <constraint firstItem="HMg-SD-0hx" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="Ejr-93-keV"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
                             <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="HMg-SD-0hx" secondAttribute="bottom" constant="20" id="Kv3-v8-CiQ"/>
@@ -34,6 +40,7 @@
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
                     <connections>
+                        <outlet property="clearButton" destination="z5O-M0-ONI" id="05m-AL-A46"/>
                         <outlet property="drawSwitch" destination="HMg-SD-0hx" id="GVc-D5-eyz"/>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
                     </connections>
@@ -43,4 +50,7 @@
             <point key="canvasLocation" x="139" y="138"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="clear.fill" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

@@ -30,6 +30,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.scene = scene
         
         registerTapGesture()
+        addShapes()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +58,31 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     @objc private func didTap(_ sender: UIGestureRecognizer) {
         print(#function)
+        
+        guard let tappedView = sender.view as? SCNView else { return }
+        let tappedCoordinates = sender.location(in: tappedView)
+        let hitTestResults = tappedView.hitTest(tappedCoordinates, options: [:])
+        
+        if let result = hitTestResults.first {
+            print("Hit something: \(result.node.name ?? "Something")")
+       
+        } else {
+            print("Hit nothing")
+        }
+        
+    }
+    
+    private func addShapes() {
+        let node = SCNNode(geometry: SCNBox(width: 0.05, height: 0.05, length: 0.05, chamferRadius: 0))
+        node.position = SCNVector3(0.1, 0, -0.1)
+        node.geometry?.firstMaterial?.diffuse.contents = UIColor.orange
+        node.name = "box"
+        sceneView.scene.rootNode.addChildNode(node)
+        
+        let node2 = SCNNode(geometry: SCNPyramid(width: 0.05, height: 0.06, length: 0.05))
+        node2.position = SCNVector3(0.1, 0.1, -0.1)
+        node2.name = "pyramid"
+        sceneView.scene.rootNode.addChildNode(node2)
     }
     
     // MARK: - ARSCNViewDelegate

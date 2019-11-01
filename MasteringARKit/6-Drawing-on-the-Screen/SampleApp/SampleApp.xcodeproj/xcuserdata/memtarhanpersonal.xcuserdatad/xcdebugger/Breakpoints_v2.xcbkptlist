@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "DFD35685-7596-4AAB-B78A-244F9F3F76C8"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0D4B913-FA92-406C-9FFD-39C5704C9A79"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SampleApp/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "renderer(_:willRenderScene:atTime:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A0D4B913-FA92-406C-9FFD-39C5704C9A79 - 8e8ce842a3dd5d95"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SampleApp.ViewController.renderer(_: __C.SCNSceneRenderer, willRenderScene: __C.SCNScene, atTime: Swift.Double) -&gt; ()"
+                  moduleName = "SampleApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/memtarhanpersonal/Developer/ios-ar-apps/MasteringARKit/6-Drawing-on-the-Screen/SampleApp/SampleApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1044">
+               </Location>
+               <Location
+                  uuid = "A0D4B913-FA92-406C-9FFD-39C5704C9A79 - 46bcafc60072199d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in SampleApp.ViewController.renderer(_: __C.SCNSceneRenderer, willRenderScene: __C.SCNScene, atTime: Swift.Double) -&gt; ()"
+                  moduleName = "SampleApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/memtarhanpersonal/Developer/ios-ar-apps/MasteringARKit/6-Drawing-on-the-Screen/SampleApp/SampleApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

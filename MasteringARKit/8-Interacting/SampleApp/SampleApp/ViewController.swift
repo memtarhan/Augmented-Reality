@@ -23,6 +23,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
+        // Set debug options
+        sceneView.debugOptions = [.showWorldOrigin, .showFeaturePoints]
+        
         // Create a new scene
         let scene = SCNScene(named: "art.scnassets/ship.scn")!
         
@@ -47,6 +50,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
 
+    @IBAction func didPinch(_ sender: UIPinchGestureRecognizer) {
+        print(#function)
+    }
+    
+    
     // MARK: - ARSCNViewDelegate
     
 /*

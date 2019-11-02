@@ -29,7 +29,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the scene to the view
         sceneView.scene = scene
         
-        registerTapGesture()
+        registerTapGestures()
+        registerSwipeGestures()
         addShapes()
     }
     
@@ -51,12 +52,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
 
     // MARK: - UITapGestureRecognizer
-    private func registerTapGesture() {
+    private func registerTapGestures() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
         sceneView.addGestureRecognizer(tapGesture)
     }
     
-    @objc private func didTap(_ sender: UIGestureRecognizer) {
+    @objc private func didTap(_ sender: UITapGestureRecognizer) {
         print(#function)
         
         guard let tappedView = sender.view as? SCNView else { return }
@@ -70,6 +71,40 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             print("Hit nothing")
         }
         
+    }
+    
+    // MARK: - UISwipeGestureRecognizer
+    private func registerSwipeGestures() {
+        let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+        swipeRightGesture.direction = .right
+        sceneView.addGestureRecognizer(swipeRightGesture)
+        
+        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+        swipeRightGesture.direction = .left
+        sceneView.addGestureRecognizer(swipeLeftGesture)
+        
+        let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+        swipeRightGesture.direction = .up
+        sceneView.addGestureRecognizer(swipeUpGesture)
+        
+        let swipeDownGesture = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+        swipeRightGesture.direction = .down
+        sceneView.addGestureRecognizer(swipeDownGesture)
+    }
+    
+    @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
+        print("\(#function) -> \(sender.direction)")
+        
+        guard let swipedView = sender.view as? SCNView else { return }
+        let swipedCoordinates = sender.location(in: swipedView)
+        let hitTestResults = swipedView.hitTest(swipedCoordinates, options: [:])
+        
+        if let result = hitTestResults.first {
+             print("Hit something: \(result.node.name ?? "Something")")
+        
+         } else {
+             print("Hit nothing")
+         }
     }
     
     private func addShapes() {

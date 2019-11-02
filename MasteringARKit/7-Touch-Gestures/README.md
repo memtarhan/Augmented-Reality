@@ -80,3 +80,43 @@ override func viewDidLoad() {
     
 ```
 
+
+
+### Identifying Swipe Gestures on Virtual Objects 
+
+```swift
+// MARK: - UISwipeGestureRecognizer
+    private func registerSwipeGestures() {
+        let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+        swipeRightGesture.direction = .right
+        sceneView.addGestureRecognizer(swipeRightGesture)
+        
+        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+        swipeRightGesture.direction = .left
+        sceneView.addGestureRecognizer(swipeLeftGesture)
+        
+        let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+        swipeRightGesture.direction = .up
+        sceneView.addGestureRecognizer(swipeUpGesture)
+        
+        let swipeDownGesture = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+        swipeRightGesture.direction = .down
+        sceneView.addGestureRecognizer(swipeDownGesture)
+    }
+    
+    @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
+        print("\(#function) -> \(sender.direction)")
+        
+        guard let swipedView = sender.view as? SCNView else { return }
+        let swipedCoordinates = sender.location(in: swipedView)
+        let hitTestResults = swipedView.hitTest(swipedCoordinates, options: [:])
+        
+        if let result = hitTestResults.first {
+             print("Hit something: \(result.node.name ?? "Something")")
+        
+         } else {
+             print("Hit nothing")
+         }
+    }
+```
+

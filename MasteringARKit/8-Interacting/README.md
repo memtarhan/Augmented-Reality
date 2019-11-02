@@ -33,3 +33,32 @@ Touch gestures consist of three states:
     }
 ```
 
+
+
+### Rotating with the Rotation Touch Gesture 
+
+```swift
+private var newAngleZ: Float = 0.0
+private var currentAngleZ: Float = 0.0
+
+@IBAction func didRotate(_ sender: UIRotationGestureRecognizer) {
+        if sender.state == .changed {
+            guard let touchedView = sender.view as? ARSCNView else { return }
+            let touchedCoordinates = sender.location(in: touchedView)
+            let hitTestResults = sceneView.hitTest(touchedCoordinates, options: nil)
+            if let result = hitTestResults.first {
+                print("\(#function) rotated a virtual object")
+                let plane = result.node
+                
+                newAngleZ = Float(-sender.rotation)
+                newAngleZ += currentAngleZ
+                
+                plane.eulerAngles.z = newAngleZ
+            }
+            
+        } else if sender.state == .ended {
+            currentAngleZ = newAngleZ
+        }
+    }
+```
+

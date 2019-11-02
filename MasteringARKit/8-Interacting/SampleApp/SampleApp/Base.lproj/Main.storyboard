@@ -20,6 +20,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="7ic-lV-s36" appends="YES" id="mj3-Dx-JrL"/>
+                                    <outletCollection property="gestureRecognizers" destination="Uyn-CL-NFX" appends="YES" id="wwy-gk-xwe"/>
                                 </connections>
                             </arscnView>
                         </subviews>
@@ -42,6 +43,11 @@
                         <action selector="didPinch:" destination="BV1-FR-VrT" id="HZF-I7-izO"/>
                     </connections>
                 </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="Uyn-CL-NFX">
+                    <connections>
+                        <action selector="didRotate:" destination="BV1-FR-VrT" id="6Mf-Oq-VHT"/>
+                    </connections>
+                </rotationGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
         </scene>

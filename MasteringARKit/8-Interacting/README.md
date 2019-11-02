@@ -62,3 +62,24 @@ private var currentAngleZ: Float = 0.0
     }
 ```
 
+
+
+### Moving Virtual Objects with the Pan Gesture 
+
+```swift
+@IBAction func didPan(_ sender: UIPanGestureRecognizer) {
+        guard let pannedView = sender.view as? ARSCNView else { return }
+        let pannedCoordinates = sender.location(in: pannedView)
+        let hitTestResults = sceneView.hitTest(pannedCoordinates, options: nil)
+        if let result = hitTestResults.first {
+            print("\(#function) panned a virtual object")
+            if let plane = result.node.parent {
+                if sender.state == .changed {
+                    let translation = sender.translation(in: pannedView)
+                    plane.localTranslate(by: SCNVector3(translation.x/10000, -translation.y/10000, 0.0))
+                }
+            }
+        }
+    }
+```
+

@@ -11,7 +11,7 @@ import SceneKit
 import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
-
+    
     @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
@@ -38,7 +38,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
-
+        
         // Run the view's session
         sceneView.session.run(configuration)
     }
@@ -49,22 +49,39 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Pause the view's session
         sceneView.session.pause()
     }
-
+    
     @IBAction func didPinch(_ sender: UIPinchGestureRecognizer) {
-        print(#function)
+        if sender.state == .changed {
+            guard let pinchedView = sender.view as? ARSCNView else { return }
+            let pinchedCoordinates = sender.location(in: pinchedView)
+            let hitTestResults = sceneView.hitTest(pinchedCoordinates, options: nil)
+            
+            if let result = hitTestResults.first {
+                print("\(#function) pinched a virtual object")
+                let plane = result.node
+                
+                let scaleX = Float(sender.scale) * plane.scale.x
+                let scaleY = Float(sender.scale) * plane.scale.y
+                let scaleZ = Float(sender.scale) * plane.scale.z
+                
+                plane.scale = SCNVector3(scaleX, scaleY, scaleZ)
+                
+                sender.scale = 1
+            }
+        }
     }
     
     
     // MARK: - ARSCNViewDelegate
     
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
+    /*
+     // Override to create and configure nodes for anchors added to the view's session.
+     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+     let node = SCNNode()
      
-        return node
-    }
-*/
+     return node
+     }
+     */
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user

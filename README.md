@@ -1,2 +1,2 @@
-# ios-ar-apps
-Augmented Reality Apps in iOS using ARKit(Swift)
+# Augmented Reality Apps in iOS using ARKit
+Enjoy :) 

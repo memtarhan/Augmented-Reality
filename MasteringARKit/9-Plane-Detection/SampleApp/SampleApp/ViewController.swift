@@ -23,6 +23,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
+        // Set debug options
+        sceneView.debugOptions = [.showWorldOrigin, .showFeaturePoints]
+        
         // Create a new scene
         let scene = SCNScene(named: "art.scnassets/ship.scn")!
         
@@ -36,6 +39,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
 
+        // Set plane detection
+        configuration.planeDetection = .horizontal
+        
         // Run the view's session
         sceneView.session.run(configuration)
     }
@@ -48,15 +54,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
 
     // MARK: - ARSCNViewDelegate
-    
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+        print("\(#function) detected plane: \(planeAnchor)")
     }
-*/
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+        print("\(#function) updating plane: \(planeAnchor)")
+    }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user

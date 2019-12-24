@@ -26,6 +26,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
+        // Set debug options
+        sceneView.debugOptions = [.showFeaturePoints]
+        
         // Create a new scene
         let scene = SCNScene()
         
@@ -62,11 +65,36 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     
     @IBAction func didTap(_ sender: UITapGestureRecognizer) {
+
         guard let scene = sender.view as? ARSCNView else { return }
-        let tappedLocation = sender.location(in: scene)
-        let hitTest = scene.hitTest(tappedLocation, types: .existingPlaneUsingExtent)
-        guard let result = hitTest.first else { return }
-        addObject(with: result)
+        guard let pointOfView = scene.pointOfView else { return }
+        let transfrom = pointOfView.transform
+        let orientation = SCNVector3(-transfrom.m31, -transfrom.m32, -transfrom.m33)
+        let location = SCNVector3(transfrom.m41, transfrom.m42, transfrom.m43)
+        let position = SCNVector3(orientation.x + location.x,
+                                  orientation.y + location.y,
+                                  orientation.z + location.z)
+        
+        let node = SCNNode()
+        node.geometry = SCNSphere(radius: 0.3)
+        node.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+        node.position = position
+        node.physicsBody = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(node: node, options: nil))
+        let force: Float = 50
+        let direction = SCNVector3(orientation.x * force,
+                                   orientation.y * force,
+                                   orientation.z * force)
+        node.physicsBody?.applyForce(direction, asImpulse: true)
+        
+        sceneView.scene.rootNode.addChildNode(node)
+//        /*
+//            Hit Result
+//         */
+//        guard let scene = sender.view as? ARSCNView else { return }
+//        let tappedLocation = sender.location(in: scene)
+//        let hitTest = scene.hitTest(tappedLocation, types: .existingPlaneUsingExtent)
+//        guard let result = hitTest.first else { return }
+//        addObject(with: result)
     }
     
     private func addObject(with result: ARHitTestResult) {

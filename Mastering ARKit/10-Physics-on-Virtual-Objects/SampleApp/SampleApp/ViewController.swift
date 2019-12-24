@@ -17,6 +17,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     private var configuration: ARWorldTrackingConfiguration!
     
+    private let ninetyDegrees = GLKMathDegreesToRadians(90)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +36,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Set the scene to the view
         sceneView.scene = scene
+        
+        addTargets()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,10 +66,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
         
         sceneView.session.run(configuration, options: [.resetTracking])
+        addTargets()
     }
     
     @IBAction func didTap(_ sender: UITapGestureRecognizer) {
-
+        
         guard let scene = sender.view as? ARSCNView else { return }
         guard let pointOfView = scene.pointOfView else { return }
         let transfrom = pointOfView.transform
@@ -87,14 +92,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         node.physicsBody?.applyForce(direction, asImpulse: true)
         
         sceneView.scene.rootNode.addChildNode(node)
-//        /*
-//            Hit Result
-//         */
-//        guard let scene = sender.view as? ARSCNView else { return }
-//        let tappedLocation = sender.location(in: scene)
-//        let hitTest = scene.hitTest(tappedLocation, types: .existingPlaneUsingExtent)
-//        guard let result = hitTest.first else { return }
-//        addObject(with: result)
+        //        /*
+        //            Hit Result
+        //         */
+        //        guard let scene = sender.view as? ARSCNView else { return }
+        //        let tappedLocation = sender.location(in: scene)
+        //        let hitTest = scene.hitTest(tappedLocation, types: .existingPlaneUsingExtent)
+        //        guard let result = hitTest.first else { return }
+        //        addObject(with: result)
     }
     
     private func addObject(with result: ARHitTestResult) {
@@ -116,11 +121,33 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         node.geometry?.firstMaterial?.diffuse.contents = UIColor.yellow
         node.geometry?.firstMaterial?.isDoubleSided = true
         node.position = SCNVector3(anchor.center.x, anchor.center.y, anchor.center.z)
-        let ninetyDegrees = GLKMathDegreesToRadians(90)
         node.eulerAngles = SCNVector3(ninetyDegrees, 0, 0)
         node.physicsBody = SCNPhysicsBody(type: .kinematic, shape: nil)
         
         return node
+    }
+    
+    private func addTargets() {
+        let pyramid = SCNNode(geometry: SCNPyramid(width: 4, height: 4.5, length: 4))
+        pyramid.geometry?.firstMaterial?.diffuse.contents = UIColor.systemIndigo
+        pyramid.position = SCNVector3(-3, 1, 15)
+        pyramid.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
+        sceneView.scene.rootNode.addChildNode(pyramid)
+        
+        let box = SCNNode(geometry: SCNBox(width: 3.5, height: 3.5, length: 3.5, chamferRadius: 0))
+        box.geometry?.firstMaterial?.diffuse.contents = UIColor.systemGreen
+        box.position = SCNVector3(5, 1, -15)
+        box.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
+        sceneView.scene.rootNode.addChildNode(box)
+        
+        let torus = SCNNode(geometry: SCNTorus(ringRadius: 2, pipeRadius: 0.5))
+        torus.geometry?.firstMaterial?.diffuse.contents = UIColor.systemPurple
+        torus.position = SCNVector3(0, -2, -15)
+        torus.eulerAngles = SCNVector3(ninetyDegrees, 0, 0)
+        torus.physicsBody = SCNPhysicsBody(type: .static,
+                                           shape: SCNPhysicsShape(node: torus,
+                                                                  options: [SCNPhysicsShape.Option.type: SCNPhysicsShape.ShapeType.concavePolyhedron]))
+        
     }
     
     // MARK: - ARSCNViewDelegate

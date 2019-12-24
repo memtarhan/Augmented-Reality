@@ -11,7 +11,7 @@ import SceneKit
 import ARKit
 import GLKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDelegate {
     
     @IBOutlet var sceneView: ARSCNView!
     
@@ -36,6 +36,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Set the scene to the view
         sceneView.scene = scene
+        
+        // Set physics world delegate
+        sceneView.scene.physicsWorld.contactDelegate = self
         
         addTargets()
     }
@@ -80,11 +83,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                                   orientation.y + location.y,
                                   orientation.z + location.z)
         
+        // Add projectile
         let node = SCNNode()
         node.geometry = SCNSphere(radius: 0.3)
         node.geometry?.firstMaterial?.diffuse.contents = UIColor.red
         node.position = position
+        node.name = "Projectile"
         node.physicsBody = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(node: node, options: nil))
+        node.physicsBody?.categoryBitMask = ContactType.projectile.rawValue
+        node.physicsBody?.contactTestBitMask = ContactType.target.rawValue
         let force: Float = 50
         let direction = SCNVector3(orientation.x * force,
                                    orientation.y * force,
@@ -131,22 +138,28 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let pyramid = SCNNode(geometry: SCNPyramid(width: 4, height: 4.5, length: 4))
         pyramid.geometry?.firstMaterial?.diffuse.contents = UIColor.systemIndigo
         pyramid.position = SCNVector3(-3, 1, 15)
+        pyramid.name = "Pyramid"
         pyramid.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
+        pyramid.physicsBody?.categoryBitMask = ContactType.target.rawValue
         sceneView.scene.rootNode.addChildNode(pyramid)
         
         let box = SCNNode(geometry: SCNBox(width: 3.5, height: 3.5, length: 3.5, chamferRadius: 0))
         box.geometry?.firstMaterial?.diffuse.contents = UIColor.systemGreen
         box.position = SCNVector3(5, 1, -15)
+        box.name = "Box"
         box.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
+        box.physicsBody?.categoryBitMask = ContactType.target.rawValue
         sceneView.scene.rootNode.addChildNode(box)
         
         let torus = SCNNode(geometry: SCNTorus(ringRadius: 2, pipeRadius: 0.5))
         torus.geometry?.firstMaterial?.diffuse.contents = UIColor.systemPurple
         torus.position = SCNVector3(0, -2, -15)
+        torus.name = "Torus"
         torus.eulerAngles = SCNVector3(ninetyDegrees, 0, 0)
         torus.physicsBody = SCNPhysicsBody(type: .static,
                                            shape: SCNPhysicsShape(node: torus,
                                                                   options: [SCNPhysicsShape.Option.type: SCNPhysicsShape.ShapeType.concavePolyhedron]))
+        torus.physicsBody?.categoryBitMask = ContactType.target.rawValue
         
     }
     
@@ -167,6 +180,31 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         node.addChildNode(plane)
     }
     
+    // MARK: - SCNPhysicsContactDelegate
+    
+    func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
+        print("\(#function) -> \(contact)")
+        
+        var targetNode: SCNNode!
+        if contact.nodeA.name == "Projectile" {
+            targetNode = contact.nodeA
+        
+        } else {
+            targetNode = contact.nodeB
+        }
+        
+        switch targetNode.name {
+        case "Pyramid":
+            targetNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+        case "Box":
+            targetNode.geometry?.firstMaterial?.diffuse.contents = UIColor.black
+        case "Torus":
+            targetNode.geometry?.firstMaterial?.diffuse.contents = UIColor.blue
+        default:
+            return
+        }
+    }
+    
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
         
@@ -181,4 +219,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+}
+
+enum ContactType: Int {
+    case projectile = 1
+    case target = 2
 }

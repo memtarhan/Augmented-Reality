@@ -26,11 +26,6 @@ class HomeViewControllerImpl: UIViewController {
 
     private var configuration: ARWorldTrackingConfiguration!
 
-    private let audioEngine = AVAudioEngine()
-    private let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
-    private let request = SFSpeechAudioBufferRecognitionRequest()
-    private var recognitionTask: SFSpeechRecognitionTask?
-
     private var isRecording = false
 
     override func viewDidLoad() {
@@ -51,8 +46,6 @@ class HomeViewControllerImpl: UIViewController {
 
         // Set the scene to the view
         sceneView.scene = scene
-
-        SFSpeechRecognizer.requestAuthorization { _ in }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -74,65 +67,18 @@ class HomeViewControllerImpl: UIViewController {
 
     @IBAction func didTap(_ sender: UITapGestureRecognizer) {
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
-        sceneView.scene.rootNode.childNodes.forEach { (node) in
+        sceneView.scene.rootNode.childNodes.forEach { node in
             node.removeFromParentNode()
         }
-        
-        if isRecording {
-            cancelRecording()
-            isRecording = false
 
-        } else {
-            recordAndRecognizeSpeech()
-            isRecording = true
-        }
+        let state: SpeechState = isRecording ? .finish : .start
+        presenter?.presentSpeechRecognition(withState: state)
+        isRecording = !isRecording
+
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseInOut, animations: {
             let cornerRadius: CGFloat = self.isRecording ? 9.0 : 22.5
             self.recordButtonView.layer.cornerRadius = cornerRadius
         }, completion: nil)
-    }
-
-    func recordAndRecognizeSpeech() {
-        let node = audioEngine.inputNode
-        let recordingFormat = node.outputFormat(forBus: 0)
-        node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
-            self.request.append(buffer)
-        }
-        audioEngine.prepare()
-        do {
-            try audioEngine.start()
-        } catch {
-            debugPrint("Error on starting audio engine: \(error)")
-        }
-        guard let myRecognizer = SFSpeechRecognizer() else { return }
-        if !myRecognizer.isAvailable {
-            debugPrint("SFSpeechRecognizer is not available")
-        }
-
-        var previousFormattedString: String?
-        recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
-            if result != nil {
-                if let result = result {
-                    let formattedString = result.bestTranscription.formattedString
-                    if previousFormattedString != formattedString {
-                        previousFormattedString = formattedString
-                        self.presenter?.present(string: formattedString.tokenize().last ?? "NONE")
-                    }
-
-                } else if let error = error {
-                    debugPrint("Error on recording: \(error)")
-                }
-            }
-        })
-    }
-
-    func cancelRecording() {
-        recognitionTask?.finish()
-        recognitionTask = nil
-
-        request.endAudio()
-        audioEngine.stop()
-        audioEngine.inputNode.removeTap(onBus: 0)
     }
 }
 

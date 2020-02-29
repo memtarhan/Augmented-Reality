@@ -20,6 +20,7 @@
 		DB631AEF240AC4270055D172 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB631AED240AC4270055D172 /* HomeViewController.swift */; };
 		DB631AF0240AC4270055D172 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB631AEE240AC4270055D172 /* HomeViewController.xib */; };
 		DB631AF2240AC4730055D172 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB631AF1240AC4730055D172 /* HomePresenter.swift */; };
+		DB631AF5240AC8AE0055D172 /* DesignedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB631AF4240AC8AE0055D172 /* DesignedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		DB631AED240AC4270055D172 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DB631AEE240AC4270055D172 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		DB631AF1240AC4730055D172 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		DB631AF4240AC8AE0055D172 /* DesignedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignedView.swift; sourceTree = "<group>"; };
 		E62F8A33496D0D5AA30F11B6 /* Pods-AugmentedWordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedWordsTests.release.xcconfig"; path = "Target Support Files/Pods-AugmentedWordsTests/Pods-AugmentedWordsTests.release.xcconfig"; sourceTree = "<group>"; };
 		FA3450F0BAA35B06704FECCB /* Pods-AugmentedWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedWords.release.xcconfig"; path = "Target Support Files/Pods-AugmentedWords/Pods-AugmentedWords.release.xcconfig"; sourceTree = "<group>"; };
 		FE0F2E17399883592DE80ECC /* Pods_AugmentedWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AugmentedWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				DB631AE7240AC3EC0055D172 /* DI */,
+				DB631AF3240AC8990055D172 /* Designed */,
 				DB631AEB240AC4130055D172 /* Scenes */,
 				DB631AB7240AC3730055D172 /* AppDelegate.swift */,
 				DB631AB9240AC3730055D172 /* art.scnassets */,
@@ -204,6 +207,14 @@
 				DB631AF1240AC4730055D172 /* HomePresenter.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		DB631AF3240AC8990055D172 /* Designed */ = {
+			isa = PBXGroup;
+			children = (
+				DB631AF4240AC8AE0055D172 /* DesignedView.swift */,
+			);
+			path = Designed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,6 +459,7 @@
 			files = (
 				DB631AEA240AC40B0055D172 /* HomeAssembly.swift in Sources */,
 				DB631AB8240AC3730055D172 /* AppDelegate.swift in Sources */,
+				DB631AF5240AC8AE0055D172 /* DesignedView.swift in Sources */,
 				DB631AF2240AC4730055D172 /* HomePresenter.swift in Sources */,
 				DB631AEF240AC4270055D172 /* HomeViewController.swift in Sources */,
 			);

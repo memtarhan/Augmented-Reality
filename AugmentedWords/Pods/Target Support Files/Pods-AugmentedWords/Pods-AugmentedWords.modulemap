@@ -1,0 +1,6 @@
+framework module Pods_AugmentedWords {
+  umbrella header "Pods-AugmentedWords-umbrella.h"
+
+  export *
+  module * { export * }
+}

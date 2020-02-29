@@ -14,7 +14,7 @@ import UIKit
 
 protocol HomeViewController: class {
     var presenter: HomePresenter? { get set }
-    
+
     func display(node: SCNNode)
 }
 
@@ -23,6 +23,8 @@ class HomeViewControllerImpl: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet var recordButtonView: DesignedView!
+
+    private var configuration: ARWorldTrackingConfiguration!
 
     private let audioEngine = AVAudioEngine()
     private let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
@@ -36,6 +38,13 @@ class HomeViewControllerImpl: UIViewController {
 
         // Set the view's delegate
         sceneView.delegate = self
+
+        // Enable environment-based lighting
+        sceneView.autoenablesDefaultLighting = true
+        sceneView.automaticallyUpdatesLighting = true
+
+        // Set a session configuration
+        configuration = ARWorldTrackingConfiguration()
 
         // Create a new scene
         let scene = SCNScene()
@@ -64,6 +73,11 @@ class HomeViewControllerImpl: UIViewController {
     }
 
     @IBAction func didTap(_ sender: UITapGestureRecognizer) {
+        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        sceneView.scene.rootNode.childNodes.forEach { (node) in
+            node.removeFromParentNode()
+        }
+        
         if isRecording {
             cancelRecording()
             isRecording = false
@@ -95,24 +109,20 @@ class HomeViewControllerImpl: UIViewController {
             debugPrint("SFSpeechRecognizer is not available")
         }
 
+        var previousFormattedString: String?
         recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
             if result != nil {
                 if let result = result {
-                    let bestString = result.bestTranscription.formattedString
-
-                    var lastString: String = ""
-                    for segment in result.bestTranscription.segments {
-                        let indexTo = bestString.index(bestString.startIndex, offsetBy: segment.substringRange.location)
-                        lastString = String(bestString[indexTo...])
-                        print("Recognized: \(lastString)")
-                        self.presenter?.present(string: lastString)
+                    let formattedString = result.bestTranscription.formattedString
+                    if previousFormattedString != formattedString {
+                        previousFormattedString = formattedString
+                        self.presenter?.present(string: formattedString.tokenize().last ?? "NONE")
                     }
 
                 } else if let error = error {
                     debugPrint("Error on recording: \(error)")
                 }
             }
-
         })
     }
 
@@ -120,7 +130,6 @@ class HomeViewControllerImpl: UIViewController {
         recognitionTask?.finish()
         recognitionTask = nil
 
-        // stop audio
         request.endAudio()
         audioEngine.stop()
         audioEngine.inputNode.removeTap(onBus: 0)

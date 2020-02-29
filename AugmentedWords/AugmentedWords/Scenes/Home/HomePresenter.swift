@@ -48,6 +48,13 @@ class HomePresenterImpl: HomePresenter {
         node.position = SCNVector3(0, randomY, -0.5)
         node.scale = SCNVector3(0.005, 0.005, 0.005)
 
+        guard let scene = SCNScene(named: "art.scnassets/cloud.scn"),
+        let cloudNode = scene.rootNode.childNode(withName: "cloud", recursively: false) else { return }
+        cloudNode.scale = SCNVector3(0.1, 0.1, 0.1)
+        cloudNode.position.y = -7
+        cloudNode.position.x = 5
+        node.addChildNode(cloudNode)
+        
         view?.display(node: node)
     }
 

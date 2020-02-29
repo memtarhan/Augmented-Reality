@@ -3,18 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0538DFBA8C688A9AC7AFA8CC /* Pods_AugmentedWordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62657680A07249D1636C05C /* Pods_AugmentedWordsTests.framework */; };
+		81C9731135CFF84AA28CEE53 /* Pods_AugmentedWords_AugmentedWordsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD84F5A9EA5DFB778CDB0777 /* Pods_AugmentedWords_AugmentedWordsUITests.framework */; };
+		ABBE771BE1BFC763F87246A1 /* Pods_AugmentedWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0F2E17399883592DE80ECC /* Pods_AugmentedWords.framework */; };
 		DB631AB8240AC3730055D172 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB631AB7240AC3730055D172 /* AppDelegate.swift */; };
 		DB631ABA240AC3730055D172 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DB631AB9240AC3730055D172 /* art.scnassets */; };
-		DB631ABC240AC3730055D172 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB631ABB240AC3730055D172 /* ViewController.swift */; };
-		DB631ABF240AC3730055D172 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB631ABD240AC3730055D172 /* Main.storyboard */; };
 		DB631AC1240AC3740055D172 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB631AC0240AC3740055D172 /* Assets.xcassets */; };
 		DB631AC4240AC3740055D172 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB631AC2240AC3740055D172 /* LaunchScreen.storyboard */; };
 		DB631ACF240AC3740055D172 /* AugmentedWordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB631ACE240AC3740055D172 /* AugmentedWordsTests.swift */; };
 		DB631ADA240AC3740055D172 /* AugmentedWordsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB631AD9240AC3740055D172 /* AugmentedWordsUITests.swift */; };
+		DB631AEA240AC40B0055D172 /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB631AE9240AC40B0055D172 /* HomeAssembly.swift */; };
+		DB631AEF240AC4270055D172 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB631AED240AC4270055D172 /* HomeViewController.swift */; };
+		DB631AF0240AC4270055D172 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB631AEE240AC4270055D172 /* HomeViewController.xib */; };
+		DB631AF2240AC4730055D172 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB631AF1240AC4730055D172 /* HomePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +40,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0363EC9D57B0350D1FF24730 /* Pods-AugmentedWords-AugmentedWordsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedWords-AugmentedWordsUITests.release.xcconfig"; path = "Target Support Files/Pods-AugmentedWords-AugmentedWordsUITests/Pods-AugmentedWords-AugmentedWordsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		62DA4216DBB83B6163731E1A /* Pods-AugmentedWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedWords.debug.xcconfig"; path = "Target Support Files/Pods-AugmentedWords/Pods-AugmentedWords.debug.xcconfig"; sourceTree = "<group>"; };
+		724EACFE897A273689F66588 /* Pods-AugmentedWordsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedWordsTests.debug.xcconfig"; path = "Target Support Files/Pods-AugmentedWordsTests/Pods-AugmentedWordsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		91E02012A93C921467E7E86D /* Pods-AugmentedWords-AugmentedWordsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedWords-AugmentedWordsUITests.debug.xcconfig"; path = "Target Support Files/Pods-AugmentedWords-AugmentedWordsUITests/Pods-AugmentedWords-AugmentedWordsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AD84F5A9EA5DFB778CDB0777 /* Pods_AugmentedWords_AugmentedWordsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AugmentedWords_AugmentedWordsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B62657680A07249D1636C05C /* Pods_AugmentedWordsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AugmentedWordsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB631AB4240AC3730055D172 /* AugmentedWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AugmentedWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB631AB7240AC3730055D172 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB631AB9240AC3730055D172 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		DB631ABB240AC3730055D172 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DB631ABE240AC3730055D172 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB631AC0240AC3740055D172 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB631AC3240AC3740055D172 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB631AC5240AC3740055D172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +58,13 @@
 		DB631AD5240AC3740055D172 /* AugmentedWordsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AugmentedWordsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB631AD9240AC3740055D172 /* AugmentedWordsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedWordsUITests.swift; sourceTree = "<group>"; };
 		DB631ADB240AC3740055D172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB631AE9240AC40B0055D172 /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
+		DB631AED240AC4270055D172 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DB631AEE240AC4270055D172 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		DB631AF1240AC4730055D172 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		E62F8A33496D0D5AA30F11B6 /* Pods-AugmentedWordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedWordsTests.release.xcconfig"; path = "Target Support Files/Pods-AugmentedWordsTests/Pods-AugmentedWordsTests.release.xcconfig"; sourceTree = "<group>"; };
+		FA3450F0BAA35B06704FECCB /* Pods-AugmentedWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedWords.release.xcconfig"; path = "Target Support Files/Pods-AugmentedWords/Pods-AugmentedWords.release.xcconfig"; sourceTree = "<group>"; };
+		FE0F2E17399883592DE80ECC /* Pods_AugmentedWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AugmentedWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABBE771BE1BFC763F87246A1 /* Pods_AugmentedWords.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0538DFBA8C688A9AC7AFA8CC /* Pods_AugmentedWordsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +88,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81C9731135CFF84AA28CEE53 /* Pods_AugmentedWords_AugmentedWordsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26F1B0F029A75386591EFFB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				62DA4216DBB83B6163731E1A /* Pods-AugmentedWords.debug.xcconfig */,
+				FA3450F0BAA35B06704FECCB /* Pods-AugmentedWords.release.xcconfig */,
+				91E02012A93C921467E7E86D /* Pods-AugmentedWords-AugmentedWordsUITests.debug.xcconfig */,
+				0363EC9D57B0350D1FF24730 /* Pods-AugmentedWords-AugmentedWordsUITests.release.xcconfig */,
+				724EACFE897A273689F66588 /* Pods-AugmentedWordsTests.debug.xcconfig */,
+				E62F8A33496D0D5AA30F11B6 /* Pods-AugmentedWordsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		626718877EFE6570C64F4DBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE0F2E17399883592DE80ECC /* Pods_AugmentedWords.framework */,
+				AD84F5A9EA5DFB778CDB0777 /* Pods_AugmentedWords_AugmentedWordsUITests.framework */,
+				B62657680A07249D1636C05C /* Pods_AugmentedWordsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DB631AAB240AC3730055D172 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +125,8 @@
 				DB631ACD240AC3740055D172 /* AugmentedWordsTests */,
 				DB631AD8240AC3740055D172 /* AugmentedWordsUITests */,
 				DB631AB5240AC3730055D172 /* Products */,
+				26F1B0F029A75386591EFFB2 /* Pods */,
+				626718877EFE6570C64F4DBE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +143,10 @@
 		DB631AB6240AC3730055D172 /* AugmentedWords */ = {
 			isa = PBXGroup;
 			children = (
+				DB631AE7240AC3EC0055D172 /* DI */,
+				DB631AEB240AC4130055D172 /* Scenes */,
 				DB631AB7240AC3730055D172 /* AppDelegate.swift */,
 				DB631AB9240AC3730055D172 /* art.scnassets */,
-				DB631ABB240AC3730055D172 /* ViewController.swift */,
-				DB631ABD240AC3730055D172 /* Main.storyboard */,
 				DB631AC0240AC3740055D172 /* Assets.xcassets */,
 				DB631AC2240AC3740055D172 /* LaunchScreen.storyboard */,
 				DB631AC5240AC3740055D172 /* Info.plist */,
@@ -128,6 +172,40 @@
 			path = AugmentedWordsUITests;
 			sourceTree = "<group>";
 		};
+		DB631AE7240AC3EC0055D172 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				DB631AE8240AC3F30055D172 /* Scenes */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		DB631AE8240AC3F30055D172 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				DB631AE9240AC40B0055D172 /* HomeAssembly.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		DB631AEB240AC4130055D172 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				DB631AEC240AC41A0055D172 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		DB631AEC240AC41A0055D172 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DB631AED240AC4270055D172 /* HomeViewController.swift */,
+				DB631AEE240AC4270055D172 /* HomeViewController.xib */,
+				DB631AF1240AC4730055D172 /* HomePresenter.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB631ADE240AC3740055D172 /* Build configuration list for PBXNativeTarget "AugmentedWords" */;
 			buildPhases = (
+				53066AC09FD8C02BA3B42EAE /* [CP] Check Pods Manifest.lock */,
 				DB631AB0240AC3730055D172 /* Sources */,
 				DB631AB1240AC3730055D172 /* Frameworks */,
 				DB631AB2240AC3730055D172 /* Resources */,
+				D7E801120B9FEF7BC740DD71 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +232,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB631AE1240AC3740055D172 /* Build configuration list for PBXNativeTarget "AugmentedWordsTests" */;
 			buildPhases = (
+				A0DAA58EF8BAD3AC68B34F78 /* [CP] Check Pods Manifest.lock */,
 				DB631AC6240AC3740055D172 /* Sources */,
 				DB631AC7240AC3740055D172 /* Frameworks */,
 				DB631AC8240AC3740055D172 /* Resources */,
@@ -170,9 +251,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB631AE4240AC3740055D172 /* Build configuration list for PBXNativeTarget "AugmentedWordsUITests" */;
 			buildPhases = (
+				E69D7F115733D4DDB09DAD8F /* [CP] Check Pods Manifest.lock */,
 				DB631AD1240AC3740055D172 /* Sources */,
 				DB631AD2240AC3740055D172 /* Frameworks */,
 				DB631AD3240AC3740055D172 /* Resources */,
+				F735E75795FAC3618ADAA451 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,8 +317,8 @@
 			files = (
 				DB631ABA240AC3730055D172 /* art.scnassets in Resources */,
 				DB631AC4240AC3740055D172 /* LaunchScreen.storyboard in Resources */,
+				DB631AF0240AC4270055D172 /* HomeViewController.xib in Resources */,
 				DB631AC1240AC3740055D172 /* Assets.xcassets in Resources */,
-				DB631ABF240AC3730055D172 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,13 +338,118 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		53066AC09FD8C02BA3B42EAE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AugmentedWords-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0DAA58EF8BAD3AC68B34F78 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AugmentedWordsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7E801120B9FEF7BC740DD71 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AugmentedWords/Pods-AugmentedWords-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AugmentedWords/Pods-AugmentedWords-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AugmentedWords/Pods-AugmentedWords-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E69D7F115733D4DDB09DAD8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AugmentedWords-AugmentedWordsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F735E75795FAC3618ADAA451 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AugmentedWords-AugmentedWordsUITests/Pods-AugmentedWords-AugmentedWordsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AugmentedWords-AugmentedWordsUITests/Pods-AugmentedWords-AugmentedWordsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AugmentedWords-AugmentedWordsUITests/Pods-AugmentedWords-AugmentedWordsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DB631AB0240AC3730055D172 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB631ABC240AC3730055D172 /* ViewController.swift in Sources */,
+				DB631AEA240AC40B0055D172 /* HomeAssembly.swift in Sources */,
 				DB631AB8240AC3730055D172 /* AppDelegate.swift in Sources */,
+				DB631AF2240AC4730055D172 /* HomePresenter.swift in Sources */,
+				DB631AEF240AC4270055D172 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +485,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DB631ABD240AC3730055D172 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB631ABE240AC3730055D172 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DB631AC2240AC3740055D172 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -432,6 +612,7 @@
 		};
 		DB631ADF240AC3740055D172 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62DA4216DBB83B6163731E1A /* Pods-AugmentedWords.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +631,7 @@
 		};
 		DB631AE0240AC3740055D172 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA3450F0BAA35B06704FECCB /* Pods-AugmentedWords.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +650,7 @@
 		};
 		DB631AE2240AC3740055D172 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 724EACFE897A273689F66588 /* Pods-AugmentedWordsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +673,7 @@
 		};
 		DB631AE3240AC3740055D172 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E62F8A33496D0D5AA30F11B6 /* Pods-AugmentedWordsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +696,7 @@
 		};
 		DB631AE5240AC3740055D172 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91E02012A93C921467E7E86D /* Pods-AugmentedWords-AugmentedWordsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +717,7 @@
 		};
 		DB631AE6240AC3740055D172 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0363EC9D57B0350D1FF24730 /* Pods-AugmentedWords-AugmentedWordsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

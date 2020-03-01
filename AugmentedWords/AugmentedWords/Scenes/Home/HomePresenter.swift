@@ -38,18 +38,8 @@ class HomePresenterImpl: HomePresenter {
     }
 
     private func present(string: String, color: UIColor?) {
-        let text = SCNText(string: string, extrusionDepth: 1)
-        text.alignmentMode = CATextLayerAlignmentMode.center.rawValue
-        text.flatness = 1
-        text.font = UIFont.systemFont(ofSize: 21, weight: .bold)
-        text.firstMaterial?.diffuse.contents = color
-//        let node = SCNNode(geometry: text)
-//        let randomY = Float.random(in: -0.5 ... 0.5)
-//        node.position = SCNVector3(0, randomY, -0.5)
-//        node.scale = SCNVector3(0.005, 0.005, 0.005)
-        
         guard let ballonScene = SCNScene(named: "art.scnassets/ballon.scn"),
-        let ballonNode = ballonScene.rootNode.childNode(withName: "ballon", recursively: false) else { return }
+            let ballonNode = ballonScene.rootNode.childNode(withName: "ballon", recursively: false) else { return }
         if let bodyNode = ballonNode.childNode(withName: "body", recursively: false),
             let material = bodyNode.geometry?.materials.first {
             material.diffuse.contents = color
@@ -59,19 +49,10 @@ class HomePresenterImpl: HomePresenter {
             text.string = string
             text.firstMaterial?.diffuse.contents = color
         }
-        
+
         let randomY = Float.random(in: -0.5 ... 0.5)
         ballonNode.position = SCNVector3(0, randomY, -0.5)
-        //ballonNode.scale = SCNVector3(0.5, 0.5, 0.5)
         ballonNode.scale = SCNVector3(0.1, 0.1, 0.1)
-        //node.addChildNode(ballonNode)
-
-//        guard let scene = SCNScene(named: "art.scnassets/cloud.scn"),
-//            let cloudNode = scene.rootNode.childNode(withName: "cloud", recursively: false) else { return }
-//        cloudNode.scale = SCNVector3(0.1, 0.1, 0.1)
-//        cloudNode.position.y = -7
-//        cloudNode.position.x = 5
-//        node.addChildNode(cloudNode)
 
         view?.display(node: ballonNode.flattenedClone())
     }
@@ -81,7 +62,6 @@ class HomePresenterImpl: HomePresenter {
         SCNTransaction.animationDuration = 100
         node.position.z = -10
         node.position.y = 10
-        //node.eulerAngles.x = -30
         SCNTransaction.commit()
     }
 

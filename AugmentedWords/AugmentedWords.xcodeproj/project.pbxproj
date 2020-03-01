@@ -10,6 +10,8 @@
 		0538DFBA8C688A9AC7AFA8CC /* Pods_AugmentedWordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62657680A07249D1636C05C /* Pods_AugmentedWordsTests.framework */; };
 		81C9731135CFF84AA28CEE53 /* Pods_AugmentedWords_AugmentedWordsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD84F5A9EA5DFB778CDB0777 /* Pods_AugmentedWords_AugmentedWordsUITests.framework */; };
 		ABBE771BE1BFC763F87246A1 /* Pods_AugmentedWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0F2E17399883592DE80ECC /* Pods_AugmentedWords.framework */; };
+		DB408EBC240BB5CD00700CF3 /* NaturalLanguageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB408EBB240BB5CD00700CF3 /* NaturalLanguageProcessor.swift */; };
+		DB408EC0240BB93D00700CF3 /* UIColor+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB408EBF240BB93D00700CF3 /* UIColor+Name.swift */; };
 		DB631AB8240AC3730055D172 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB631AB7240AC3730055D172 /* AppDelegate.swift */; };
 		DB631ABA240AC3730055D172 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DB631AB9240AC3730055D172 /* art.scnassets */; };
 		DB631AC1240AC3740055D172 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB631AC0240AC3740055D172 /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		91E02012A93C921467E7E86D /* Pods-AugmentedWords-AugmentedWordsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedWords-AugmentedWordsUITests.debug.xcconfig"; path = "Target Support Files/Pods-AugmentedWords-AugmentedWordsUITests/Pods-AugmentedWords-AugmentedWordsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD84F5A9EA5DFB778CDB0777 /* Pods_AugmentedWords_AugmentedWordsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AugmentedWords_AugmentedWordsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62657680A07249D1636C05C /* Pods_AugmentedWordsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AugmentedWordsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB408EBB240BB5CD00700CF3 /* NaturalLanguageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturalLanguageProcessor.swift; sourceTree = "<group>"; };
+		DB408EBF240BB93D00700CF3 /* UIColor+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Name.swift"; sourceTree = "<group>"; };
 		DB631AB4240AC3730055D172 /* AugmentedWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AugmentedWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB631AB7240AC3730055D172 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB631AB9240AC3730055D172 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -124,6 +128,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DB408EBA240BB5A500700CF3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DB408EBB240BB5CD00700CF3 /* NaturalLanguageProcessor.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		DB631AAB240AC3730055D172 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +164,7 @@
 				DB631AE7240AC3EC0055D172 /* DI */,
 				DB631AF3240AC8990055D172 /* Designed */,
 				DB631AEB240AC4130055D172 /* Scenes */,
+				DB408EBA240BB5A500700CF3 /* Services */,
 				DB631AF6240AD8BF0055D172 /* Utils */,
 				DB631AB7240AC3730055D172 /* AppDelegate.swift */,
 				DB631AB9240AC3730055D172 /* art.scnassets */,
@@ -227,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				DB631AF7240AD8D90055D172 /* String+Words.swift */,
+				DB408EBF240BB93D00700CF3 /* UIColor+Name.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -473,8 +487,10 @@
 			files = (
 				DB631AEA240AC40B0055D172 /* HomeAssembly.swift in Sources */,
 				DB631AB8240AC3730055D172 /* AppDelegate.swift in Sources */,
+				DB408EC0240BB93D00700CF3 /* UIColor+Name.swift in Sources */,
 				DB631AFA240AEDE00055D172 /* HomeEntity.swift in Sources */,
 				DB631AF8240AD8D90055D172 /* String+Words.swift in Sources */,
+				DB408EBC240BB5CD00700CF3 /* NaturalLanguageProcessor.swift in Sources */,
 				DB631AF5240AC8AE0055D172 /* DesignedView.swift in Sources */,
 				DB631AF2240AC4730055D172 /* HomePresenter.swift in Sources */,
 				DB631AEF240AC4270055D172 /* HomeViewController.swift in Sources */,

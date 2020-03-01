@@ -37,24 +37,24 @@ class HomePresenterImpl: HomePresenter {
         }
     }
 
-    private func present(string: String) {
+    private func present(string: String, color: UIColor) {
         let text = SCNText(string: string, extrusionDepth: 1)
         text.alignmentMode = CATextLayerAlignmentMode.center.rawValue
         text.flatness = 1
         text.font = UIFont.systemFont(ofSize: 21, weight: .bold)
-        text.firstMaterial?.diffuse.contents = UIColor.systemRed
+        text.firstMaterial?.diffuse.contents = color
         let node = SCNNode(geometry: text)
-        let randomY = Float.random(in: -0.5...0.5)
+        let randomY = Float.random(in: -0.5 ... 0.5)
         node.position = SCNVector3(0, randomY, -0.5)
         node.scale = SCNVector3(0.005, 0.005, 0.005)
 
         guard let scene = SCNScene(named: "art.scnassets/cloud.scn"),
-        let cloudNode = scene.rootNode.childNode(withName: "cloud", recursively: false) else { return }
+            let cloudNode = scene.rootNode.childNode(withName: "cloud", recursively: false) else { return }
         cloudNode.scale = SCNVector3(0.1, 0.1, 0.1)
         cloudNode.position.y = -7
         cloudNode.position.x = 5
         node.addChildNode(cloudNode)
-        
+
         view?.display(node: node)
     }
 
@@ -103,7 +103,10 @@ class HomePresenterImpl: HomePresenter {
                     let formattedString = result.bestTranscription.formattedString
                     if previousFormattedString != formattedString {
                         previousFormattedString = formattedString
-                        self.present(string: formattedString.tokenize().last ?? "NONE")
+                        if let string = formattedString.tokenized.last {
+                            let color = UIColor(name: string) ?? UIColor.black
+                            self.present(string: string, color: color)
+                        }
                     }
 
                 } else if let error = error {

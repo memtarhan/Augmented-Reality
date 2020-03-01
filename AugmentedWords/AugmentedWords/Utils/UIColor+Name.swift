@@ -8,23 +8,32 @@
 
 import UIKit
 
+/**
+
+ For more: https://www.hackingwithswift.com/about
+ Thanks to Paul Hudson (https://twitter.com/twostraws)
+
+ The link to this function: https://www.hackingwithswift.com/example-code/uicolor/how-to-convert-a-html-name-string-into-a-uicolor
+
+ */
+
 extension UIColor {
     public convenience init?(hexString: String) {
         let r, g, b, a: CGFloat
 
         if hexString.hasPrefix("#") {
             let start = hexString.index(hexString.startIndex, offsetBy: 1)
-            let hexColor = String(hexString[start...]) //hexString.substring(from: start)
+            let hexColor = String(hexString[start...]) // hexString.substring(from: start)
 
             if hexColor.count == 8 {
                 let scanner = Scanner(string: hexColor)
                 var hexNumber: UInt64 = 0
 
                 if scanner.scanHexInt64(&hexNumber) {
-                    r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
-                    g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
-                    b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
-                    a = CGFloat(hexNumber & 0x000000ff) / 255
+                    r = CGFloat((hexNumber & 0xFF000000) >> 24) / 255
+                    g = CGFloat((hexNumber & 0x00FF0000) >> 16) / 255
+                    b = CGFloat((hexNumber & 0x0000FF00) >> 8) / 255
+                    a = CGFloat(hexNumber & 0x000000FF) / 255
 
                     self.init(red: r, green: g, blue: b, alpha: a)
                     return
@@ -184,7 +193,7 @@ extension UIColor {
             "white": "#FFFFFFFF",
             "whitesmoke": "#F5F5F5FF",
             "yellow": "#FFFF00FF",
-            "yellowgreen": "#9ACD32FF"
+            "yellowgreen": "#9ACD32FF",
         ]
 
         let cleanedName = name.replacingOccurrences(of: " ", with: "").lowercased()

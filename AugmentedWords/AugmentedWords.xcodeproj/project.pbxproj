@@ -12,6 +12,7 @@
 		ABBE771BE1BFC763F87246A1 /* Pods_AugmentedWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0F2E17399883592DE80ECC /* Pods_AugmentedWords.framework */; };
 		DB408EBC240BB5CD00700CF3 /* NaturalLanguageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB408EBB240BB5CD00700CF3 /* NaturalLanguageProcessor.swift */; };
 		DB408EC0240BB93D00700CF3 /* UIColor+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB408EBF240BB93D00700CF3 /* UIColor+Name.swift */; };
+		DB408EC2240BBBD700700CF3 /* String+NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB408EC1240BBBD700700CF3 /* String+NSNumber.swift */; };
 		DB631AB8240AC3730055D172 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB631AB7240AC3730055D172 /* AppDelegate.swift */; };
 		DB631ABA240AC3730055D172 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DB631AB9240AC3730055D172 /* art.scnassets */; };
 		DB631AC1240AC3740055D172 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB631AC0240AC3740055D172 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		B62657680A07249D1636C05C /* Pods_AugmentedWordsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AugmentedWordsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB408EBB240BB5CD00700CF3 /* NaturalLanguageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturalLanguageProcessor.swift; sourceTree = "<group>"; };
 		DB408EBF240BB93D00700CF3 /* UIColor+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Name.swift"; sourceTree = "<group>"; };
+		DB408EC1240BBBD700700CF3 /* String+NSNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NSNumber.swift"; sourceTree = "<group>"; };
 		DB631AB4240AC3730055D172 /* AugmentedWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AugmentedWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB631AB7240AC3730055D172 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB631AB9240AC3730055D172 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				DB631AF7240AD8D90055D172 /* String+Words.swift */,
 				DB408EBF240BB93D00700CF3 /* UIColor+Name.swift */,
+				DB408EC1240BBBD700700CF3 /* String+NSNumber.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 			files = (
 				DB631AEA240AC40B0055D172 /* HomeAssembly.swift in Sources */,
 				DB631AB8240AC3730055D172 /* AppDelegate.swift in Sources */,
+				DB408EC2240BBBD700700CF3 /* String+NSNumber.swift in Sources */,
 				DB408EC0240BB93D00700CF3 /* UIColor+Name.swift in Sources */,
 				DB631AFA240AEDE00055D172 /* HomeEntity.swift in Sources */,
 				DB631AF8240AD8D90055D172 /* String+Words.swift in Sources */,

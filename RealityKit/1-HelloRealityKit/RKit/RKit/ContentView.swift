@@ -20,18 +20,8 @@ struct ARViewContainer: UIViewRepresentable {
 
         let anchor = AnchorEntity(plane: .horizontal)
 
-        let material = SimpleMaterial(color: .blue, isMetallic: true)
-        let meshResource = MeshResource.generateBox(size: 0.1)
-        let box = ModelEntity(mesh: meshResource, materials: [material])
-
-        anchor.addChild(box)
-        
-        let sphere = ModelEntity(mesh: MeshResource.generateSphere(radius: 0.1), materials: [SimpleMaterial(color: .yellow, isMetallic: true)])
-        sphere.position = simd_make_float3(0, 0.3, 0)
-        anchor.addChild(sphere)
-        
-        let plane = ModelEntity(mesh: MeshResource.generatePlane(width: 0.5, depth: 0.3), materials: [SimpleMaterial(color: .black, isMetallic: true)])
-        anchor.addChild(plane)
+        let text = ModelEntity(mesh: MeshResource.generateText("RealityKit", extrusionDepth: 0.1, font: .systemFont(ofSize: 0.2, weight: .bold), containerFrame: .zero, alignment: .center, lineBreakMode: .byClipping), materials: [SimpleMaterial(color: .blue, isMetallic: true)])
+        anchor.addChild(text)
         
         arView.scene.anchors.append(anchor)
         

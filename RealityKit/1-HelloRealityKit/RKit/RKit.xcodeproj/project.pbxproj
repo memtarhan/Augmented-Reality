@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		436ABDEA287A31C500ADEA6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436ABDE9287A31C500ADEA6A /* AppDelegate.swift */; };
 		436ABDEC287A31C600ADEA6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436ABDEB287A31C600ADEA6A /* ContentView.swift */; };
-		436ABDEE287A31C600ADEA6A /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 436ABDED287A31C600ADEA6A /* Experience.rcproject */; };
 		436ABDF0287A31C700ADEA6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 436ABDEF287A31C700ADEA6A /* Assets.xcassets */; };
 		436ABDF3287A31C700ADEA6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 436ABDF2287A31C700ADEA6A /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -18,7 +17,6 @@
 		436ABDE6287A31C500ADEA6A /* RKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		436ABDE9287A31C500ADEA6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		436ABDEB287A31C600ADEA6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		436ABDED287A31C600ADEA6A /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		436ABDEF287A31C700ADEA6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		436ABDF2287A31C700ADEA6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,7 +53,6 @@
 			children = (
 				436ABDE9287A31C500ADEA6A /* AppDelegate.swift */,
 				436ABDEB287A31C600ADEA6A /* ContentView.swift */,
-				436ABDED287A31C600ADEA6A /* Experience.rcproject */,
 				436ABDEF287A31C700ADEA6A /* Assets.xcassets */,
 				436ABDF1287A31C700ADEA6A /* Preview Content */,
 			);
@@ -142,7 +139,6 @@
 			files = (
 				436ABDEC287A31C600ADEA6A /* ContentView.swift in Sources */,
 				436ABDEA287A31C500ADEA6A /* AppDelegate.swift in Sources */,
-				436ABDEE287A31C600ADEA6A /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
